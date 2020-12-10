@@ -12,15 +12,15 @@ def merge(arrA, arrB):
         elif b_index > len(arrB) -1:    # Edge case: If arrB doesn't exist or if b_index has gone beyond the length of arrB
             merged_arr[i] = arrA[a_index]   # Set the current spot in merged_arr to the next value in arrA
             a_index += 1                    # Increment the a_index up by one
-        else:                           # If
-            if arrA[a_index] > arrB[b_index]:   # If the 
-                merged_arr[i] = arrB[b_index]
-                b_index += 1
-            else:
-                merged_arr[i] = arrA[a_index]
-                a_index += 1
+        else:                           # If both arrA and arrB exist AND the index values haven't gone beyond the length of the arrays 
+            if arrA[a_index] > arrB[b_index]:   # If the value at the current spot in the arrA is greater than the value in arrB 
+                merged_arr[i] = arrB[b_index]   # Set the current spot in merged_arr to the next value in arrB
+                b_index += 1    # Increment b_index up by one
+            else:                       # If the value at the current spot the arrB is greater than the value in arrA 
+                merged_arr[i] = arrA[a_index]   # Set the current spot in merged_arr to the next value in arrA
+                a_index += 1    # Increment a_index up by one
 
-    return merged_arr
+    return merged_arr   # Return the merged array
 
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
